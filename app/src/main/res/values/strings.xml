@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Pokéglass</string>
     <string name="search_hint">Bulbasaur</string>
+    <string name="team">Team</string>
 </resources>
