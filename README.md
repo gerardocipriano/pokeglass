@@ -16,10 +16,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app">
-    <img src="src/main/res/playstore-icon.png" alt="Logo" width="80" height="80">
+    <img src="app/src/main/res/playstore-icon.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Pokè</h3>
+<h3 align="center">PokèGlass</h3>
 
   <p align="center">
     Pokéglass is an Android app written in Kotlin that allows users to search for their favorite Pokémon and view their information such as name and basic stats. Save your favorite Pokémon locally and stay up-to-date with the latest Pokémon data.
@@ -68,7 +68,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<br />
+<div align="center">
+  <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app">
+    <img src="app/src/main/res/playstore-icon.png" alt="Logo" width="80" height="80">
+  </a>
+</div>
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `gerardo.cipriano@studio.unibo.it_client`, `gerardo.cipriano@studio.unibo.it`, `PokéGlass`, `Pokéglass is an Android app written in Kotlin that allows users to search for their favorite Pokémon and view their information such as name and basic stats. Save your favorite Pokémon locally and stay up-to-date with the latest Pokémon data.`
 
