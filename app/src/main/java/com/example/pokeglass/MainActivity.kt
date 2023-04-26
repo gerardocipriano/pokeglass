@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadMorePokemon(adapter: PokemonAdapter) {
         CoroutineScope(Dispatchers.IO).launch {
-            while (allPokemon.size < 100) { // sostituisci 100 con il numero desiderato di Pokémon da scaricare
+            while (allPokemon.size < 151) {
                 val response = service.getAllPokemon(limit, offset)
                 val newPokemon = response.results.map { pokemonResult: PokemonResult ->
                     val pokemonResponse = service.getPokemon(pokemonResult.name)
