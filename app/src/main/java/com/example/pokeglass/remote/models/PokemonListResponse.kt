@@ -1,5 +1,5 @@
 package com.example.pokeglass.remote.models
 
-data class PokemonResponse(
+data class PokemonListResponse(
     val results: List<PokemonResult>
 )

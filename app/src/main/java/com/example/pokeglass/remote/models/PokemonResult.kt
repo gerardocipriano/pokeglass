@@ -1,7 +1,7 @@
 package com.example.pokeglass.remote.models
 
-data class Pokemon(
+data class PokemonResult(
     val name: String,
-    val url: String,
-    val spriteUrl: String
+    val url: String
 )
+
