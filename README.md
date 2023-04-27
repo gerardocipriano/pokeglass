@@ -15,7 +15,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app">
+  <a href="https://github.com/gerardocipriano/pokeglass-android-app">
     <img src="app/src/main/res/playstore-icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -24,14 +24,14 @@
   <p align="center">
     Pokéglass is an Android app written in Kotlin that allows users to search for their favorite Pokémon and view their information such as name and basic stats. Save your favorite Pokémon locally and stay up-to-date with the latest Pokémon data.
     <br />
-    <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/gerardocipriano/pokeglass-android-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app">View Demo</a>
+    <a href="https://github.com/gerardocipriano/pokeglass-android-app">View Demo</a>
     ·
-    <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app/issues">Report Bug</a>
+    <a href="https://github.com/gerardocipriano/pokeglass-android-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app/issues">Request Feature</a>
+    <a href="https://github.com/gerardocipriano/pokeglass-android-app/issues">Request Feature</a>
   </p>
 </div>
 
@@ -70,12 +70,12 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/gerardocipriano/pss22-pokeglass-android-app">
+  <a href="https://github.com/gerardocipriano/pokeglass-android-app">
     <img src="app/src/main/res/playstore-icon.png" alt="Logo" width="80" height="80">
   </a>
 </div>
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `gerardo.cipriano@studio.unibo.it_client`, `gerardo.cipriano@studio.unibo.it`, `PokéGlass`, `Pokéglass is an Android app written in Kotlin that allows users to search for their favorite Pokémon and view their information such as name and basic stats. Save your favorite Pokémon locally and stay up-to-date with the latest Pokémon data.`
+The goal of developing this Android App is to create a simple and intuitive user experience for creating and managing your own Pokémon team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,14 +83,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+- Kotlin
+- Android Studio
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,7 +110,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/gerardocipriano/pss22-pokeglass-android-app.git
+   git clone https://github.com/gerardocipriano/pokeglass-android-app.git
    ```
 3. Install NPM packages
    ```sh
@@ -155,7 +150,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Users can save more than one pokemon team 
 
-See the [open issues](https://github.com/gerardocipriano/pss22-pokeglass-android-app/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/gerardocipriano/pokeglass-android-app/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,20 +186,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - gerardo.cipriano@studio.unibo.it@gerardo.cipriano@studio.unibo.it_client.com
+Gerardo Cipriano - gerardo.cipriano@studio.unibo.it
 
-Project Link: [https://github.com/gerardocipriano/pss22-pokeglass-android-app](https://github.com/gerardocipriano/pss22-pokeglass-android-app)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/gerardocipriano/pokeglass-android-app](https://github.com/gerardocipriano/pokeglass-android-app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,15 +197,15 @@ Project Link: [https://github.com/gerardocipriano/pss22-pokeglass-android-app](h
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/gerardocipriano/pss22-pokeglass-android-app/graphs/contributors
+[contributors-url]: https://github.com/gerardocipriano/pokeglass-android-app/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/gerardocipriano/pss22-pokeglass-android-app/network/members
+[forks-url]: https://github.com/gerardocipriano/pokeglass-android-app/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/gerardocipriano/pss22-pokeglass-android-app/stargazers
+[stars-url]: https://github.com/gerardocipriano/pokeglass-android-app/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/gerardocipriano/pss22-pokeglass-android-app/issues
+[issues-url]: https://github.com/gerardocipriano/pokeglass-android-app/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/gerardocipriano/pss22-pokeglass-android-app/blob/master/LICENSE.txt
+[license-url]: https://github.com/gerardocipriano/pokeglass-android-app/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
