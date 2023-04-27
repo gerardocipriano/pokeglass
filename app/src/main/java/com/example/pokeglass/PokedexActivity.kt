@@ -4,37 +4,39 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.adapters.PokemonAdapter
 import com.example.pokeglass.remote.RemoteApi
 import com.example.pokeglass.remote.models.Pokemon
-import com.example.pokeglass.remote.models.PokemonResult
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.pokeglass.repository.PokemonRepository
 
 class MainActivity : AppCompatActivity() {
-    private val service = RemoteApi.service
-    private var offset = 0
-    private val limit = 12
+    private lateinit var viewModel: PokedexActivityViewModel
     private var allPokemon: MutableList<Pokemon> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val service = RemoteApi.service
+        val repository = PokemonRepository(service)
+        val viewModelFactory = MainActivityViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(PokedexActivityViewModel::class.java)
+
         val searchEditText = findViewById<EditText>(R.id.search_edit_text)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        val adapter = PokemonAdapter(allPokemon) { pokemon ->
-            // Aggiungi il Pokémon alla squadra qui
-        }
+        val adapter = PokemonAdapter(allPokemon) { pokemon -> }
         recyclerView.adapter = adapter
 
-        // Carica i primi dati
-        loadMorePokemon(adapter)
+        viewModel.pokemonList.observe(this, Observer { newPokemon ->
+            allPokemon.addAll(newPokemon)
+            adapter.updateData(allPokemon)
+        })
 
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -44,28 +46,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
     }
+}
 
-    private fun loadMorePokemon(adapter: PokemonAdapter) {
-        CoroutineScope(Dispatchers.IO).launch {
-            while (allPokemon.size < 151) {
-                val response = service.getAllPokemon(limit, offset)
-                val newPokemon = response.results.map { pokemonResult: PokemonResult ->
-                    val pokemonResponse = service.getPokemon(pokemonResult.name)
-                    val spriteUrl = pokemonResponse.sprites.front_default
-                    Pokemon(pokemonResult.name, pokemonResult.url, spriteUrl)
-                }
-
-                allPokemon.addAll(newPokemon)
-                offset += limit
-
-                CoroutineScope(Dispatchers.Main).launch {
-                    adapter.updateData(allPokemon)
-                }
-            }
+class MainActivityViewModelFactory(private val repository: PokemonRepository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PokedexActivityViewModel::class.java)) {
+            return PokedexActivityViewModel(repository) as T
         }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
