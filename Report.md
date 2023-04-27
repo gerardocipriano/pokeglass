@@ -1,4 +1,4 @@
-# Relazione per Laboratorio di Sistemi Mobili
+# Relazione Progetto per Esame Laboratorio di Programmazione di Sistemi Mobili
 
 ### Analisi
 
@@ -31,7 +31,9 @@ L’interfaccia dell’applicazione consente all’allenatore di visualizzare le
 
 Gli elementi costitutivi il problema sono sintetizzati nella seguente figura.
 
-```classDiagram
+```mermaid
+classDiagram
+
     class Pokemon {
         <<Entity>>
         -id: int
@@ -89,7 +91,10 @@ Inoltre, possiamo utilizzare la libreria di Android Architecture Components, che
 
 Infine, per la gestione delle dipendenze, possiamo utilizzare Gradle come sistema di build.
 
-```classDiagram
+Il concetto è esemplificato nel seguente diagramma UML architetturale.
+
+```mermaid
+classDiagram
     PokedexActivity --|> AppCompatActivity
     PokedexActivity *-- PokedexActivityViewModel
     PokedexActivityViewModel o-- PokemonRepository
@@ -113,17 +118,6 @@ Infine, per la gestione delle dipendenze, possiamo utilizzare Gradle come sistem
         +getPokemon(name: String): PokemonDetailsResponse
     }
 ```
-
-Con questa architettura, possono essere aggiunti un numero arbitrario di
-input ed output all'intelligenza artificiale. Ovviamente, mentre
-l'aggiunta di output è semplice e non richiede alcuna modifica all'IA,
-la presenza di nuovi tipi di evento richiede invece in potenza aggiunte
-o rifiniture a GLaDOS. Questo è dovuto al fatto che nuovi Input
-rappresentano di fatto nuovi elementi della business logic, la cui
-alterazione od espansione inevitabilmente impatta il controller del
-progetto.
-
-In è esemplificato il diagramma UML architetturale.
 
 ## Design dettagliato
 
