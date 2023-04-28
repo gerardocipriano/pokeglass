@@ -10,9 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 /**
- * ViewModel for the MainActivity.
+ * ViewModel for the PokedexActivity.
  *
- * This class is responsible for managing the data for the MainActivity,
+ * This class is responsible for managing the data for the PokedexActivity,
  * including loading the list of Pokemon from a repository and exposing
  * the data to the activity via LiveData.
  *
