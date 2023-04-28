@@ -37,12 +37,12 @@ class PokedexActivity : AppCompatActivity() {
         val service = RemoteApi.service
         val repository = PokemonRepository(service)
         val viewModelFactory = PokedexActivityViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(PokedexActivityViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[PokedexActivityViewModel::class.java]
 
         val searchEditText = findViewById<EditText>(R.id.search_edit_text)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = PokemonAdapter(allPokemon) { pokemon ->
+        val adapter = PokemonAdapter(allPokemon) { _ ->
             // Gestisci il clic su un elemento della lista dei Pokemon
         }
         recyclerView.adapter = adapter
@@ -84,13 +84,5 @@ class PokedexActivity : AppCompatActivity() {
             val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
             drawerLayout.openDrawer(GravityCompat.START)
         }
-    }
-}
-class PokedexActivityViewModelFactory(private val repository: PokemonRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(PokedexActivityViewModel::class.java)) {
-            return PokedexActivityViewModel(repository) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
