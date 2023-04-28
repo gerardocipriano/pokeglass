@@ -83,9 +83,9 @@ Nello specifico, l’architettura MVVM prevede la suddivisione dell’applicazio
 
 Model: si occupa di gestire i dati dell’applicazione, inclusi i dati ottenuti dall’API di PokeAPI. In particolare, possiamo utilizzare una classe chiamata PokemonRepository che utilizza Retrofit (una libreria per la gestione delle chiamate HTTP) per recuperare i dati dell’elenco dei Pokémon dall’API di PokeAPI e poi li restituisce al ViewModel.
 
-View: si occupa di visualizzare i dati all’utente, attraverso l’interfaccia grafica dell’applicazione. In particolare, possiamo utilizzare un’activity chiamata MainActivity che mostra l’elenco dei Pokémon, e un’activity chiamata SquadraActivity che mostra la squadra dell’allenatore.
+View: si occupa di visualizzare i dati all’utente, attraverso l’interfaccia grafica dell’applicazione. In particolare, possiamo utilizzare un’activity chiamata PokedexActivity che mostra l’elenco dei Pokémon, e un’activity chiamata SquadraActivity che mostra la squadra dell’allenatore.
 
-ViewModel: si occupa di gestire la logica dell’applicazione e di coordinare le interazioni tra il Model e la View. In particolare, possiamo utilizzare un ViewModel chiamato MainActivityViewModel che si occupa di recuperare i dati dell’elenco dei Pokémon e li restituisce alla MainActivity, e un ViewModel chiamato TeamActivityViewModel che si occupa di gestire i dati relativi alla squadra dell’allenatore.
+ViewModel: si occupa di gestire la logica dell’applicazione e di coordinare le interazioni tra il Model e la View. In particolare, possiamo utilizzare un ViewModel chiamato PokedexActivityViewModel che si occupa di recuperare i dati dell’elenco dei Pokémon e li restituisce alla PokedexActivity, e un ViewModel chiamato TeamActivityViewModel che si occupa di gestire i dati relativi alla squadra dell’allenatore.
 
 Inoltre, possiamo utilizzare la libreria di Android Architecture Components, che fornisce strumenti per la gestione del ciclo di vita delle activity e dei fragment dell’applicazione, e per la gestione della comunicazione tra il ViewModel e la View attraverso l’uso di LiveData.
 
