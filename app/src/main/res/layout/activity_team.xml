@@ -5,26 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/pokedex_red"
+            app:title="Pokeglass" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/pokedex_red"
-                app:title="Pokeglass" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello World" />
+                android:columnCount="2"
+                android:rowCount="3">
 
-        </LinearLayout>
+                <include layout="@layout/team_member_box" />
+                <include layout="@layout/team_member_box" />
+                <include layout="@layout/team_member_box" />
+                <include layout="@layout/team_member_box" />
+                <include layout="@layout/team_member_box" />
+                <include layout="@layout/team_member_box" />
 
-        <com.google.android.material.navigation.NavigationView
+            </GridLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
