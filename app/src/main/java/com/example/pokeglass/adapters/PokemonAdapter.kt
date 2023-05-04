@@ -60,7 +60,15 @@ class PokemonAdapter(
         val pokemon = pokemonList[position]
         holder.nameTextView.text = pokemon.name
         holder.addButton.setOnClickListener {
-            onAddClicked(pokemon)
+            val teamEntity = TeamEntity(
+                name = pokemon.name,
+                spriteUrl = pokemon.spriteUrl,
+                hp = 0,
+                attack = 0,
+                defense = 0,
+                speed = 0
+            )
+            repository.insertTeamMember(teamEntity)
         }
         Picasso.get().load(pokemon.spriteUrl).into(holder.spriteImageView)
     }
