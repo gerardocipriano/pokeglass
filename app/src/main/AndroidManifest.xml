@@ -15,11 +15,11 @@
         android:theme="@style/Theme.Pokeglass"
         tools:targetApi="31">
         <activity
-            android:name=".ui.TeamActivity"
+            android:name=".TeamActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.PokedexActivity"
+            android:name=".PokedexActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

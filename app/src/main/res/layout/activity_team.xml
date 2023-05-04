@@ -5,38 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/pokedex_red"
-            app:title="Pokeglass" />
+            app:title="Pokeglass"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/teamRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="3">
-
-                <include layout="@layout/team_member_box" />
-                <include layout="@layout/team_member_box" />
-                <include layout="@layout/team_member_box" />
-                <include layout="@layout/team_member_box" />
-                <include layout="@layout/team_member_box" />
-                <include layout="@layout/team_member_box" />
-
-            </GridLayout>
-        </ScrollView>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
