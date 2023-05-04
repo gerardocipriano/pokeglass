@@ -1,4 +1,4 @@
-package com.example.pokeglass.ui
+package com.example.pokeglass
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,9 +16,9 @@ import com.example.pokeglass.adapters.PokemonAdapter
 import com.example.pokeglass.remote.RemoteApi
 import com.example.pokeglass.remote.models.Pokemon
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.pokeglass.R
-import com.example.pokeglass.TeamApplication
 import com.example.pokeglass.data.PokemonRepository
+import com.example.pokeglass.ui.PokedexActivityViewModel
+import com.example.pokeglass.ui.PokedexActivityViewModelFactory
 import com.google.android.material.navigation.NavigationView
 
 class PokedexActivity : AppCompatActivity() {
