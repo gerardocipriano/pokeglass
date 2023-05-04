@@ -8,16 +8,17 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokeglass.R
 import com.example.pokeglass.adapters.PokemonAdapter
-import com.example.pokeglass.data.PokemonRepository
 import com.example.pokeglass.remote.RemoteApi
 import com.example.pokeglass.remote.models.Pokemon
+import androidx.drawerlayout.widget.DrawerLayout
+import com.example.pokeglass.R
+import com.example.pokeglass.TeamApplication
+import com.example.pokeglass.data.PokemonRepository
 import com.google.android.material.navigation.NavigationView
 
 class PokedexActivity : AppCompatActivity() {
@@ -34,14 +35,17 @@ class PokedexActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
 
         val service = RemoteApi.service
-        val repository = PokemonRepository(service)
-        val viewModelFactory = PokedexActivityViewModelFactory(repository)
+        val pokedexRepository = PokemonRepository(service)
+        val viewModelFactory = PokedexActivityViewModelFactory(pokedexRepository)
         viewModel = ViewModelProvider(this, viewModelFactory)[PokedexActivityViewModel::class.java]
 
         val searchEditText = findViewById<EditText>(R.id.search_edit_text)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = PokemonAdapter(allPokemon) { _ ->
+
+        val teamApplication = application as TeamApplication
+        val repository = teamApplication.getTeamRepository()
+        val adapter = PokemonAdapter(allPokemon, repository) { _ ->
             // Gestisci il clic su un elemento della lista dei Pokemon
         }
         recyclerView.adapter = adapter

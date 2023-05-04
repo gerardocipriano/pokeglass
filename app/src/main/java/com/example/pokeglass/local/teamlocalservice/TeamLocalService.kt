@@ -7,4 +7,6 @@ interface TeamLocalService {
     fun insert(teamMember: TeamEntity)
     fun getAll(): Flow<List<TeamEntity>>
     fun deleteByName(name: String)
+
+    fun getTeamSize(): Int
 }

@@ -16,4 +16,7 @@ class RoomTeamLocalService(private val teamDao: TeamDao) : TeamLocalService {
     override fun deleteByName(name: String) {
         teamDao.deleteByName(name)
     }
+    override fun getTeamSize(): Int {
+        return teamDao.getTeamSize()
+    }
 }

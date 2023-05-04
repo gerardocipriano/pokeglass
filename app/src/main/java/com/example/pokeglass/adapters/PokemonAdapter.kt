@@ -1,15 +1,15 @@
 package com.example.pokeglass.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.R
+import com.example.pokeglass.data.TeamRepository
+import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
 import com.example.pokeglass.remote.models.Pokemon
 import com.squareup.picasso.Picasso
 
@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso
  */
 class PokemonAdapter(
     private var pokemonList: List<Pokemon>,
+    private val teamRepository: TeamRepository,
     private val onAddClicked: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
@@ -60,7 +61,15 @@ class PokemonAdapter(
         val pokemon = pokemonList[position]
         holder.nameTextView.text = pokemon.name
         holder.addButton.setOnClickListener {
-            onAddClicked(pokemon)
+            val teamEntity = TeamEntity(
+                name = pokemon.name,
+                spriteUrl = pokemon.spriteUrl,
+                hp = 0,
+                attack = 0,
+                defense = 0,
+                speed = 0
+            )
+            teamRepository.insertTeamMember(teamEntity)
         }
         Picasso.get().load(pokemon.spriteUrl).into(holder.spriteImageView)
     }

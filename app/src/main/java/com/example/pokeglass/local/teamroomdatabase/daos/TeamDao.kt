@@ -17,4 +17,6 @@ interface TeamDao {
 
     @Query("DELETE FROM team_table WHERE name = :name")
     fun deleteByName(name: String)
+    @Query("SELECT COUNT(*) FROM team_table")
+    fun getTeamSize(): Int
 }
