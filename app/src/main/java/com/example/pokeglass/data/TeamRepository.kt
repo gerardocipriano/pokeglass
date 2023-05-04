@@ -5,7 +5,7 @@ import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity;
 import kotlinx.coroutines.flow.Flow
 
 public class TeamRepository(private val teamLocalService: TeamLocalService) {
-    fun insert(teamEntity:TeamEntity) {
+    fun insertTeamMember(teamEntity: TeamEntity) = CoroutineScope(Dispatchers.IO).launch {
         teamLocalService.insert(teamEntity)
     }
 
