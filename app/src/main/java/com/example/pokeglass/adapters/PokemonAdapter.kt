@@ -12,6 +12,7 @@ import com.example.pokeglass.data.TeamRepository
 import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
 import com.example.pokeglass.remote.models.Pokemon
 import com.squareup.picasso.Picasso
+import kotlin.random.Random
 
 /**
  * Adapter for displaying a list of Pokemon in a RecyclerView.
@@ -64,13 +65,14 @@ class PokemonAdapter(
             val teamEntity = TeamEntity(
                 name = pokemon.name,
                 spriteUrl = pokemon.spriteUrl,
-                hp = 0,
-                attack = 0,
-                defense = 0,
-                speed = 0
+                hp = Random.nextInt(1, 100),
+                attack = Random.nextInt(1, 100),
+                defense = Random.nextInt(1, 100),
+                speed = Random.nextInt(1, 100)
             )
             teamRepository.insertTeamMember(teamEntity)
         }
+
         Picasso.get().load(pokemon.spriteUrl).into(holder.spriteImageView)
     }
 
