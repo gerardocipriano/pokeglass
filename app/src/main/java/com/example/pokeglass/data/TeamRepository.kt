@@ -19,7 +19,7 @@ public class TeamRepository(private val teamLocalService: TeamLocalService) {
         return teamLocalService.getAll()
     }
 
-    fun deleteByName(name: String) {
+    fun deleteTeamMember(name: String) = CoroutineScope(Dispatchers.IO).launch {
         teamLocalService.deleteByName(name)
     }
 }
