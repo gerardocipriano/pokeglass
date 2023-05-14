@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.adapters.OnDeletePokemonListener
 import com.example.pokeglass.adapters.TeamAdapter
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import com.example.pokeglass.ui.TeamActivityViewModel
 import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.flow.collectLatest

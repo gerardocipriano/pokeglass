@@ -1,11 +1,11 @@
-package com.example.pokeglass.local.teamroomdatabase
+package com.example.pokeglass.local.teamlocalservice.teamroomdatabase
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.pokeglass.local.teamroomdatabase.daos.TeamDao
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.daos.TeamDao
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 
 @Database(entities = [TeamEntity::class], version = 1)
 abstract class TeamRoomDatabase : RoomDatabase() {

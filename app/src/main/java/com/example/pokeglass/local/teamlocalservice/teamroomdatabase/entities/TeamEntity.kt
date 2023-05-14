@@ -1,4 +1,4 @@
-package com.example.pokeglass.local.teamroomdatabase.entities
+package com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

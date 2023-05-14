@@ -1,10 +1,10 @@
-package com.example.pokeglass.local.teamroomdatabase.daos
+package com.example.pokeglass.local.teamlocalservice.teamroomdatabase.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

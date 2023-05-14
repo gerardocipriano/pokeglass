@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.R
 import com.example.pokeglass.data.TeamRepository
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import com.squareup.picasso.Picasso
 
 class TeamAdapter(

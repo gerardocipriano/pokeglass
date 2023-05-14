@@ -1,7 +1,7 @@
 package com.example.pokeglass.local.teamlocalservice
 
-import com.example.pokeglass.local.teamroomdatabase.daos.TeamDao
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.daos.TeamDao
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import kotlinx.coroutines.flow.Flow
 
 class RoomTeamLocalService(private val teamDao: TeamDao) : TeamLocalService {

@@ -1,6 +1,6 @@
 package com.example.pokeglass.local.teamlocalservice
 
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import kotlinx.coroutines.flow.Flow
 
 interface TeamLocalService {
