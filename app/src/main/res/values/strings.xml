@@ -5,4 +5,5 @@
     <string name="remove">Remove</string>
     <string name="delete_button_label">Remove</string>
     <string name="imageviewpokemon">pokemonsprite</string>
+    <string name="searchhint">Search here</string>
 </resources>

@@ -46,7 +46,7 @@ class PokedexActivity : AppCompatActivity() {
         val teamApplication = application as TeamApplication
         val teamRepository = teamApplication.getTeamRepository()
         val adapter = PokemonAdapter(allPokemon, teamRepository, pokedexRepository) { _ ->
-            // Gestisci il clic su un elemento della lista dei Pokemon
+            // Manages the click on the Add button
         }
         recyclerView.adapter = adapter
 
