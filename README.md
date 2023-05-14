@@ -107,19 +107,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/gerardocipriano/pokeglass-android-app.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Simply get the apk contained in this Repo and install it on your android device.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,9 +116,27 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Pokedex
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+From the main page, you can browse and search for your favorite Pokémon. Once you have decided which Pokémon you would like to add to your team, simply click the “Add” button. Please note that you cannot have more than one Pokémon with the same name on your team, and your team can have a maximum of 6 Pokémon.
+
+<br />
+<div align="center">
+  <a href="https://github.com/gerardocipriano/pokeglass-android-app">
+    <img src="app/src/main/res/pokedexactivity.jpg" alt="pokedex" >
+  </a>
+</div>
+
+### Team
+
+From this page, you can view all the Pokémon that you have added to your team. You can consult their base stats and remove them from your team if you wish.
+
+<br />
+<div align="center">
+  <a href="https://github.com/gerardocipriano/pokeglass-android-app">
+    <img src="app/src/main/res/teamactivity.jpg" alt="pokedex" >
+  </a>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
