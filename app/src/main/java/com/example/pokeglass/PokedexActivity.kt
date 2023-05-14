@@ -8,15 +8,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.adapters.PokemonAdapter
+import com.example.pokeglass.data.PokemonRepository
 import com.example.pokeglass.remote.RemoteApi
 import com.example.pokeglass.remote.models.Pokemon
-import androidx.drawerlayout.widget.DrawerLayout
-import com.example.pokeglass.data.PokemonRepository
 import com.example.pokeglass.ui.PokedexActivityViewModel
 import com.example.pokeglass.ui.PokedexActivityViewModelFactory
 import com.google.android.material.navigation.NavigationView
@@ -44,8 +44,8 @@ class PokedexActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val teamApplication = application as TeamApplication
-        val repository = teamApplication.getTeamRepository()
-        val adapter = PokemonAdapter(allPokemon, repository) { _ ->
+        val teamRepository = teamApplication.getTeamRepository()
+        val adapter = PokemonAdapter(allPokemon, teamRepository, pokedexRepository) { _ ->
             // Gestisci il clic su un elemento della lista dei Pokemon
         }
         recyclerView.adapter = adapter

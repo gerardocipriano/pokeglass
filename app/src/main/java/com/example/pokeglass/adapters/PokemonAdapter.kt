@@ -7,12 +7,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.R
+import com.example.pokeglass.data.PokemonRepository
 import com.example.pokeglass.data.TeamRepository
 import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import com.example.pokeglass.remote.models.Pokemon
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
-import kotlin.random.Random
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /**
  * Adapter for displaying a list of Pokemon in a RecyclerView.
@@ -23,6 +25,7 @@ import kotlin.random.Random
 class PokemonAdapter(
     private var pokemonList: List<Pokemon>,
     private val teamRepository: TeamRepository,
+    private val pokemonRepository: PokemonRepository,
     private val onAddClicked: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
@@ -62,16 +65,20 @@ class PokemonAdapter(
         val pokemon = pokemonList[position]
         holder.nameTextView.text = pokemon.name
         holder.addButton.setOnClickListener {
-            val teamEntity = TeamEntity(
-                name = pokemon.name,
-                spriteUrl = pokemon.spriteUrl,
-                hp = Random.nextInt(1, 100),
-                attack = Random.nextInt(1, 100),
-                defense = Random.nextInt(1, 100),
-                speed = Random.nextInt(1, 100)
-            )
-            teamRepository.insertTeamMember(teamEntity)
+            GlobalScope.launch {
+                val pokemonStats = pokemonRepository.getPokemonStats(pokemon.name)
+                val teamEntity = TeamEntity(
+                    name = pokemon.name,
+                    spriteUrl = pokemon.spriteUrl,
+                    hp = pokemonStats.hp,
+                    attack = pokemonStats.attack,
+                    defense = pokemonStats.defense,
+                    speed = pokemonStats.speed
+                )
+                teamRepository.insertTeamMember(teamEntity)
+            }
         }
+
 
         Picasso.get().load(pokemon.spriteUrl).into(holder.spriteImageView)
     }
