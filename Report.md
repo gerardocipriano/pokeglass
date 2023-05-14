@@ -29,7 +29,7 @@ L’allenatore può selezionare fino a 6 Pokémon dal Pokédex per creare la pro
 Ogni Pokémon nella squadra dell’allenatore è identificato dal suo nome univoco all’interno dell’applicazione.
 L’interfaccia dell’applicazione consente all’allenatore di visualizzare le statistiche di base dei Pokémon selezionati nella squadra.
 
-Gli elementi costitutivi il problema sono sintetizzati nella seguente figura.
+Gli elementi costitutivi del dominio sono sintetizzati nella seguente figura.
 
 ```mermaid
 classDiagram
@@ -95,7 +95,6 @@ Il concetto è esemplificato nel seguente diagramma UML architetturale.
 
 ```mermaid
 classDiagram
-    PokedexActivity --|> AppCompatActivity
     PokedexActivity *-- PokedexActivityViewModel
     PokedexActivityViewModel o-- PokemonRepository
     PokemonRepository o-- PokeApiService
@@ -113,7 +112,7 @@ classDiagram
         -service: PokeApiService
         +getAllPokemon(limit: Int, offset: Int): List<Pokemon>
     }
-    interface PokeApiService {
+    class PokeApiService {
         +getAllPokemon(limit: Int, offset: Int): PokemonResponse
         +getPokemon(name: String): PokemonDetailsResponse
     }
