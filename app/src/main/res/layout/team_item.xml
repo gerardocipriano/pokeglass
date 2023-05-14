@@ -17,7 +17,8 @@
             android:id="@+id/spriteImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:contentDescription="@string/imageviewpokemon"/>
 
         <TextView
             android:id="@+id/nameTextView"
