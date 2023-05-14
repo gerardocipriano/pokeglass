@@ -29,7 +29,7 @@ class PokedexActivityViewModel(private val repository: PokemonRepository) : View
     private var offset = 0
 
     // Limit for retrieving data from the repository
-    private val limit = 12
+    private val limit = 6
 
     // Total number of Pokemon loaded
     private var totalLoaded = 0

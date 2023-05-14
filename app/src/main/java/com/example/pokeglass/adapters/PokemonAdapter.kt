@@ -3,14 +3,14 @@ package com.example.pokeglass.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokeglass.R
 import com.example.pokeglass.data.TeamRepository
-import com.example.pokeglass.local.teamroomdatabase.entities.TeamEntity
+import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.entities.TeamEntity
 import com.example.pokeglass.remote.models.Pokemon
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 import kotlin.random.Random
 
@@ -35,7 +35,7 @@ class PokemonAdapter(
      */
     class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.pokemon_name)
-        val addButton: Button = itemView.findViewById(R.id.add_button)
+        val addButton: FloatingActionButton = itemView.findViewById(R.id.add_button)
         val spriteImageView: ImageView = itemView.findViewById(R.id.pokemon_sprite)
     }
 
