@@ -4,6 +4,8 @@
     <string name="team">Team</string>
     <string name="remove">Remove</string>
     <string name="delete_button_label">Remove</string>
-    <string name="imageviewpokemon">pokemonsprite</string>
+    <string name="pokedex">Pokedex</string>
     <string name="searchhint">Search here</string>
+    <string name="search_hint">Search here</string>
+    <string name="imageviewpokemon">pokemon sprite</string>
 </resources>
