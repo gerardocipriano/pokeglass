@@ -28,7 +28,7 @@ class TeamActivity : AppCompatActivity(), OnDeletePokemonListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
 
-        val teamApplication = application as TeamApplication
+        val teamApplication = application as MainApplication
         val repository = teamApplication.getTeamRepository()
         viewModel = TeamActivityViewModel(application, repository)
 

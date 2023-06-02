@@ -43,7 +43,7 @@ class PokedexActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val teamApplication = application as TeamApplication
+        val teamApplication = application as MainApplication
         val teamRepository = teamApplication.getTeamRepository()
         val adapter = PokemonAdapter(allPokemon, teamRepository, pokedexRepository) { _ ->
             // Manages the click on the Add button

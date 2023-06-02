@@ -5,7 +5,7 @@ import com.example.pokeglass.data.TeamRepository
 import com.example.pokeglass.local.teamlocalservice.RoomTeamLocalService
 import com.example.pokeglass.local.teamlocalservice.teamroomdatabase.TeamRoomDatabase
 
-class TeamApplication : Application() {
+class MainApplication : Application() {
     // Using by lazy so the database and the repository are only created when they're needed
     // rather than when the application starts
     private val database by lazy { TeamRoomDatabase.getDatabase(this) }
